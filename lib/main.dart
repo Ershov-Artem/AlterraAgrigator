@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             button: GoogleFonts.gothicA1(fontSize: 18, color: Colors.white),
             headline1:
                 GoogleFonts.gothicA1(fontSize: 20, color: Color(0xFF18508A)),
-            bodyText1: GoogleFonts.gothicA1(fontSize: 18, color: Colors.black),
+            bodyText1: GoogleFonts.gothicA1(fontSize: 15, color: Colors.black),
           )),
       home: HomePage(),
     );
