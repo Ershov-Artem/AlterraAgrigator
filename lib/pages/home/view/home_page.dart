@@ -1,3 +1,4 @@
+import 'package:alterra_agrigaator/widgets/header_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'home_form.dart';
@@ -11,8 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: HomeForm(),
-    );
+        backgroundColor: Colors.white,
+        body: Column(children: <Widget>[NavigationBar(), HomeForm()]));
   }
 }

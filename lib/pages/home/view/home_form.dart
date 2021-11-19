@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:alterra_agrigaator/pages/home/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +15,7 @@ class _HomeFormState extends State<HomeForm> {
   Widget build(BuildContext context) => Column(
         children: [
           Container(
+            padding: EdgeInsets.only(top: 15),
             alignment: Alignment.center,
             child: Text(
               "ПОДБОР ВОЗДУШНЫХ ТЕПЛООБМЕННИКОВ",
@@ -33,7 +32,8 @@ class _HomeFormState extends State<HomeForm> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Container(
-                            width: 200,
+                            width: 230,
+                            padding: EdgeInsets.only(bottom: 15),
                             child: TextFormField(
                               onSaved: (newValue) => _power = newValue!,
                               decoration: InputDecoration(
@@ -46,9 +46,10 @@ class _HomeFormState extends State<HomeForm> {
                               ),
                             )),
                         Container(
-                            width: 200,
+                            width: 230,
+                            padding: EdgeInsets.only(bottom: 15),
                             child: TextFormField(
-                              onSaved: (newValue) => _power = newValue!,
+                              onSaved: (newValue) => _frionType = newValue!,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.symmetric(
                                     vertical: 5, horizontal: 15),
@@ -59,9 +60,10 @@ class _HomeFormState extends State<HomeForm> {
                               ),
                             )),
                         Container(
-                            width: 200,
+                            width: 230,
+                            padding: EdgeInsets.only(bottom: 15),
                             child: TextFormField(
-                              onSaved: (newValue) => _power = newValue!,
+                              onSaved: (newValue) => _condenceTemp = newValue!,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.symmetric(
                                     vertical: 5, horizontal: 15),
@@ -71,10 +73,11 @@ class _HomeFormState extends State<HomeForm> {
                                 labelText: "Температура конденсации",
                               ),
                             )),
+                        Container(height: 10),
                         CustomButton(
                             onTap: () {},
                             height: 40,
-                            width: 200,
+                            width: 230,
                             text: "Подобрать",
                             decoration: BoxDecoration(
                                 color: Color(0xFF18508A),
@@ -87,6 +90,15 @@ class _HomeFormState extends State<HomeForm> {
                   child: Container(
                     alignment: Alignment.center,
                     height: 400,
+                    child: (true)
+                        ? Container(
+                            width: 250,
+                            child: Text(
+                              "Здесь появятся подходящие Вам модели",
+                              style: Theme.of(context).textTheme.headline1,
+                              textAlign: TextAlign.center,
+                            ))
+                        : ListView(),
                   ))
             ],
           )
