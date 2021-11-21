@@ -22,10 +22,17 @@ class _HomeFormState extends State<HomeForm> {
               style: Theme.of(context).textTheme.headline1,
             ),
           ),
+          SizedBox(
+            height: 15,
+          ),
           Row(
             children: [
               Expanded(
-                  flex: 50,
+                flex: 10,
+                child: Container(),
+              ),
+              Expanded(
+                  flex: 40,
                   child: Form(
                     key: formKey,
                     child: Column(
@@ -86,10 +93,13 @@ class _HomeFormState extends State<HomeForm> {
                     ),
                   )),
               Expanded(
-                  flex: 50,
+                  flex: 40,
                   child: Container(
                     alignment: Alignment.center,
                     height: 400,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Color(0xFF18508A))),
                     child: (true)
                         ? Container(
                             width: 250,
@@ -99,7 +109,11 @@ class _HomeFormState extends State<HomeForm> {
                               textAlign: TextAlign.center,
                             ))
                         : ListView(),
-                  ))
+                  )),
+              Expanded(
+                flex: 10,
+                child: Container(),
+              ),
             ],
           )
         ],
